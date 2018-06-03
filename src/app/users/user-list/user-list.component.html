@@ -1,0 +1,9 @@
+<button (click)="onCreateUser()">Create</button>
+
+<ul>
+  <li *ngFor="let user of users$ | async">
+    <input type="text" value="{{user.title}}">
+    <input type="button" (click)="onRemoveUser(user.id)" value="Remove">
+    <input type="button" (click)="onUpdateUser(user)" value="Update">
+  </li>
+</ul>

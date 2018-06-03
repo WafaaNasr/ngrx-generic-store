@@ -116,6 +116,46 @@
           }
         }
       }
+    },
+    "ngrx-app-store": {
+      "root": "projects/ngrx-app-store",
+      "sourceRoot": "projects/ngrx-app-store/src",
+      "projectType": "library",
+      "prefix": "nas",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/ngrx-app-store/tsconfig.lib.json",
+            "project": "projects/ngrx-app-store/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/ngrx-app-store/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ngrx-app-store/src/test.ts",
+            "tsConfig": "projects/ngrx-app-store/tsconfig.spec.json",
+            "karmaConfig": "projects/ngrx-app-store/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ngrx-app-store/tsconfig.lib.json",
+              "projects/ngrx-app-store/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "Angular-AirSupport-FlightTracking"

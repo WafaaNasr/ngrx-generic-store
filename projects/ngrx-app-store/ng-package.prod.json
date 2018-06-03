@@ -1,0 +1,16 @@
+{
+  "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
+  "dest": "../../dist/ngrx-app-store",
+  "lib": {
+    "entryFile": "src/public_api.ts"
+  },
+  "whitelistedNonPeerDependencies": [
+    "tslib",
+    "@ngrx/entity",
+    "@ngrx/router-store",
+    "@ngrx/store",
+    "enum-values",
+    "rxjs",
+    "rxjs-compat"
+  ]
+}
