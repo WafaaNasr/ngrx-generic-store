@@ -1,4 +1,4 @@
-import { Observable } from 'rxjs/rx';
+import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { createEntityAdapter, EntityAdapter } from '@ngrx/entity';
 import { IBaseEntityState } from './entitiy-adapter.index';

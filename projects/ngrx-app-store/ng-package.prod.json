@@ -6,11 +6,11 @@
   },
   "whitelistedNonPeerDependencies": [
     "tslib",
+    "ng-packagr",
     "@ngrx/entity",
     "@ngrx/router-store",
     "@ngrx/store",
     "enum-values",
-    "rxjs",
-    "rxjs-compat"
+    "rxjs"
   ]
 }
