@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { StoreModule } from '@ngrx/store';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
@@ -7,6 +8,7 @@ import { StoreRouterConnectingModule } from '@ngrx/router-store';
     StoreModule.forRoot({}),
     StoreRouterConnectingModule,
   ],
-  declarations: []
+  declarations: [],
+  exports:[HttpClientModule]
 })
 export class NgrxAppStoreModule { }
