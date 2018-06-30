@@ -8,7 +8,6 @@ import { EntitySelectors } from '@ngrx/entity/src/models';
 import { combineLatest, Observable } from 'rxjs';
 
 import { Store } from '@ngrx/store';
-import { EntityAdapter } from '@ngrx/entity';
 
 @Injectable()
 export class StoreSelectors {

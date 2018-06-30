@@ -41,6 +41,7 @@ export class UserStoreDispatcherService extends StoreService<UserEntity, UserSta
   }
 
   cLoadAction(api: string) {
+    debugger
     this.dispatchAction(new UserActions.DefaultLoad<UserEntity>(api));
   }
 

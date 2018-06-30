@@ -18,6 +18,7 @@ export class UserListComponent implements OnInit {
      private selectorService: UserStoreSelectorService) {}
 
   ngOnInit() {
+    debugger
    this.users$ = this.selectorService.getAll(this.selectorService.selectors.selectAll);
   }
 

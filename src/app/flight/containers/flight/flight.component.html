@@ -1,0 +1,16 @@
+<!-- <ng-template #flightList>
+        <lib-flight-list [flights]="flights$">
+        </lib-flight-list>
+    </ng-template>
+    <div class="error-msg" *ngIf="error$ | async as error">
+        <p>{{ error }}</p>
+    </div> -->
+
+
+
+
+<ul>
+    <li *ngFor="let user of flights$ | async">
+        <input type="text" value="{{user.title}}">
+    </li>
+</ul>

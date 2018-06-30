@@ -1,0 +1,58 @@
+<!-- 
+<div class="wrapper">
+    <ul>
+        <li>
+          <button (click)="setDispalyStatus(displayStatus.Expand)"> 
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxuczp4PSJodHRwOi8vbnMuYWRvYmUuY29tL0V4dGVuc2liaWxpdHkvMS4wLyIgeG1sbnM6aT0iaHR0cDovL25zLmFkb2JlLmNvbS9BZG9iZUlsbHVzdHJhdG9yLzEwLjAvIiB4bWxuczpncmFwaD0iaHR0cDovL25zLmFkb2JlLmNvbS9HcmFwaHMvMS4wLyIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iLTk0OSA5NTEgMTAwIDEyNSIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAtOTQ5IDk1MSAxMDAgMTAwOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PHN3aXRjaD48Zm9yZWlnbk9iamVjdCByZXF1aXJlZEV4dGVuc2lvbnM9Imh0dHA6Ly9ucy5hZG9iZS5jb20vQWRvYmVJbGx1c3RyYXRvci8xMC4wLyIgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIvPjxnIGk6ZXh0cmFuZW91cz0ic2VsZiI+PGc+PHBvbHlnb24gcG9pbnRzPSItOTE4LjMsOTkwLjIgLTkwOS44LDk4MS43IC05MjUuOSw5NjUuNiAtOTEzLjIsOTY1LjYgLTkxMy4yLDk1My41IC05NDYuNSw5NTMuNSAtOTQ2LjUsOTg2LjggLTkzNC40LDk4Ni44ICAgICAgLTkzNC40LDk3NC4xICAgICIvPjxwb2x5Z29uIHBvaW50cz0iLTkyNS45LDEwMzYuNCAtOTA5LjgsMTAyMC4zIC05MTguMywxMDExLjggLTkzNC40LDEwMjcuOSAtOTM0LjQsMTAxNS4yIC05NDYuNSwxMDE1LjIgLTk0Ni41LDEwNDguNSAgICAgIC05MTMuMiwxMDQ4LjUgLTkxMy4yLDEwMzYuNCAgICAiLz48cG9seWdvbiBwb2ludHM9Ii04NzIuMSw5NjUuNiAtODg4LjIsOTgxLjcgLTg3OS43LDk5MC4yIC04NjMuNiw5NzQuMSAtODYzLjYsOTg2LjggLTg1MS41LDk4Ni44IC04NTEuNSw5NTMuNSAtODg0LjgsOTUzLjUgICAgICAtODg0LjgsOTY1LjYgICAgIi8+PHBvbHlnb24gcG9pbnRzPSItODUxLjUsMTAxNS4yIC04NjMuNiwxMDE1LjIgLTg2My42LDEwMjcuOSAtODc5LjcsMTAxMS44IC04ODguMiwxMDIwLjMgLTg3Mi4xLDEwMzYuNCAtODg0LjgsMTAzNi40ICAgICAgLTg4NC44LDEwNDguNSAtODUxLjUsMTA0OC41ICAgICIvPjwvZz48L2c+PC9zd2l0Y2g+PC9zdmc+"
+              alt="">
+          </button>
+        </li>
+        <li>
+          <button (click)="setDispalyStatus(displayStatus.Collapse)">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgMTAwIDEyNSIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgMTAwIDEwMCIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PHBhdGggZD0iTTE3LjgyNCw0MC43MTJjLTAuNzc2LDAuNzc3LTEuMDY3LDEuNTM1LTAuODIsMi4xMzRjMC4yNDksMC42MDIsMC45OTMsMC45MzMsMi4wOSwwLjkzM2gyMi41NDIgIGMwLjU2MiwwLDEuMDkzLTAuMjIsMS40OTUtMC42MjFjMC4zOTgtMC40LDAuNjItMC45MzEsMC42MTgtMS40OTRsMC4wMDItMjIuNTRjMC0xLjEtMC4zMy0xLjg0Mi0wLjkzNS0yLjA5MSAgYy0wLjYtMC4yNDctMS4zNTUsMC4wNDUtMi4xMzIsMC44MThMMzUuNSwyMy4wMzVMMTcuNDkyLDUuMDI2TDUsMTcuNTE5bDE4LjAwOCwxOC4wMDlMMTcuODI0LDQwLjcxMnoiLz48cGF0aCBkPSJNNTguMzYzLDQzLjc3OGgyMi41NDNjMS4wOTksMCwxLjg0MS0wLjMzMSwyLjA5Mi0wLjkzM2MwLjI0NS0wLjYtMC4wNDQtMS4zNTgtMC44Mi0yLjEzNWwtNS4xODUtNS4xODVMOTUsMTcuNTE4ICBMODIuNTA4LDUuMDI3TDY0LjUwMSwyMy4wMzZsLTUuMTg3LTUuMTg3Yy0wLjc3My0wLjc3Mi0xLjUzNS0xLjA2NS0yLjEzMy0wLjgxNmMtMC42MDMsMC4yNDctMC45MzQsMC45ODktMC45MzQsMi4wODl2MjIuNTQgIGMwLDAuNTY0LDAuMjIzLDEuMDk0LDAuNjIsMS40OTVDNTcuMjcxLDQzLjU1OCw1Ny44MDEsNDMuNzc4LDU4LjM2Myw0My43Nzh6Ii8+PHBhdGggZD0iTTQxLjY4OCw1Ni4yMjNIMTkuMTQ2Yy0xLjA5OCwwLTEuODQxLDAuMzI4LTIuMDksMC45MzJjLTAuMjQ3LDAuNTk4LDAuMDQ0LDEuMzU3LDAuODE5LDIuMTM1bDUuMTg0LDUuMTg2TDUuMDUxLDgyLjQ4ICBsMTIuNDkzLDEyLjQ5MmwxOC4wMDgtMTguMDA5bDUuMTg1LDUuMTg1YzAuNzc1LDAuNzc1LDEuNTM0LDEuMDY1LDIuMTM1LDAuODE5YzAuNjAxLTAuMjUsMC45MzEtMC45OTEsMC45MzItMi4wOTFWNTguMzM0ICBjLTAuMDAxLTAuNTYzLTAuMjItMS4wOTMtMC42Mi0xLjQ5MUM0Mi43ODIsNTYuNDQxLDQyLjI1LDU2LjIyMyw0MS42ODgsNTYuMjIzeiIvPjxwYXRoIGQ9Ik04Mi4xNzMsNTkuMjM2YzAuNzc2LTAuNzc1LDEuMDY1LTEuNTM0LDAuODIyLTIuMTM1Yy0wLjI1LTAuNi0wLjk5NC0wLjkzMi0yLjA5MS0wLjkzMkg1OC4zNjEgIGMtMC41NjMsMC0xLjA5NCwwLjIxOS0xLjQ5NCwwLjYyMWMtMC4zOTksMC4zOTgtMC42MiwwLjkzMi0wLjYxOSwxLjQ5M2wtMC4wMDEsMjIuNTQyYzAsMS4wOTgsMC4zMzEsMS44NDEsMC45MzMsMi4wOTEgIGMwLjYsMC4yNDcsMS4zNTYtMC4wNDQsMi4xMzMtMC44MTlsNS4xODYtNS4xODZsMTguMDEsMTguMDA2bDEyLjQ5LTEyLjQ5MmwtMTguMDEtMTguMDA1TDgyLjE3Myw1OS4yMzZ6Ii8+PC9zdmc+"
+              alt="">
+          </button>
+        </li>
+        <li>
+          <button (click)="setDispalyStatus(displayStatus.Close)">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGRhdGEtbmFtZT0iTGF5ZXIgMSIgdmlld0JveD0iMCAwIDEwMCAxMjUiIHg9IjBweCIgeT0iMHB4Ij48dGl0bGU+RmlzdDwvdGl0bGU+PHBvbHlnb24gcG9pbnRzPSI5NSA1MCA2OS4xNCAyNC4xNCA2OS4xNCA0MC4yMiA1IDQwLjIyIDUgNTkuNzggNjkuMTQgNTkuNzggNjkuMTQgNzUuODYgOTUgNTAiLz48L3N2Zz4="
+              alt="">
+          </button>
+        </li>
+        <li>
+          <button (click)="setDispalyStatus(displayStatus.Show)">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGRhdGEtbmFtZT0iTGF5ZXIgMSIgdmlld0JveD0iMCAwIDEwMCAxMjUiIHg9IjBweCIgeT0iMHB4Ij48dGl0bGU+RmlzdDwvdGl0bGU+PHBvbHlnb24gcG9pbnRzPSIzMC44NiA0MC4yMiAzMC44NiAyNC4xNCA1IDUwIDMwLjg2IDc1Ljg2IDMwLjg2IDU5Ljc4IDk1IDU5Ljc4IDk1IDQwLjIyIDMwLjg2IDQwLjIyIi8+PC9zdmc+"
+              alt="">
+          </button>
+        </li>
+      </ul>
+      
+      <table >
+        <thead>
+          <tr>
+            <th scope="col">Flight ID</th>
+            <th scope="col">Tail</th>
+            <th scope="col">DEP</th>
+            <th scope="col">DEST</th>
+            <th scope="col">CTOT</th>
+            <th scope="col">STD</th>
+          </tr>
+        </thead>
+        <tbody >
+          <tr *ngFor='let flight of flights$ | sortFlights'>
+            <lib-flight-item [flight]='flight'></lib-flight-item>
+          </tr>
+        </tbody>
+      </table>
+</div>
+ -->
+ <button (click)="onCreateUser()">Create</button>
+
+ <ul>
+   <li *ngFor="let user of flights$ | async">
+     <input type="text" value="{{user.title}}">
+     <input type="button" (click)="onRemoveUser(user.id)" value="Remove">
+     <input type="button" (click)="onUpdateUser(user)" value="Update">
+   </li>
+ </ul>
+ 

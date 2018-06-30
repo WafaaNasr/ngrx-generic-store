@@ -1,3 +1,4 @@
+import { FlightComponent } from './flight/containers/flight/flight.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -6,13 +7,19 @@ import { AppComponent } from './app.component';
 import { UsersModule } from './users/users.module';
 import { Routes, RouterModule } from "@angular/router";
 import { Store, NgrxAppStoreModule } from 'ngrx-app-store';
+import { FlightModule } from './flight/flight.module';
 
 
 export const routes: Routes = [
 
   {
     path: "users",
-     loadChildren: "./users/users.module#UsersModule" // => Works also
+    loadChildren: "./users/users.module#UsersModule" // => Works also
+  },
+  {
+    path: "flight",
+    //loadChildren: "./flight/flight.module#FlightModule"
+    component: FlightComponent
   }
 ];
 
@@ -23,14 +30,14 @@ export const routes: Routes = [
   ],
   imports: [
     BrowserModule,
-    UsersModule,
     RouterModule.forRoot(routes),
-    NgrxAppStoreModule
+    UsersModule,
+    FlightModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { 
+export class AppModule {
   constructor(store: Store<any>) {
     store.select(s => s).subscribe(console.log.bind(console));
   }

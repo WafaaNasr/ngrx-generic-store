@@ -10,7 +10,7 @@ export class StoreStateFactory<T> {
   private baseInitialState: IBaseEntityState<T>;
   private store: Store<T>;
 
-  public CreateEntityAdapter() {
+  private CreateEntityAdapter() {
 
     this.baseEntityAdapter = createEntityAdapter<T>({
       selectId: (entity: any) => entity.id,
@@ -30,7 +30,7 @@ export class StoreStateFactory<T> {
     return this.baseEntityAdapter;
   }
 
-  public GetEntityInitialState() {
+  public GetEntityInitialState(): IBaseEntityState<T> {
 
     if (this.baseInitialState != null) {
       return this.baseInitialState;
@@ -39,7 +39,9 @@ export class StoreStateFactory<T> {
     return this.baseEntityAdapter.getInitialState({
       isLoading: false,
       selectedEntityId: null,
-      error: null
+      error: null,
+      hasError: false,
+      isLoaded: false
     });
   }
 
