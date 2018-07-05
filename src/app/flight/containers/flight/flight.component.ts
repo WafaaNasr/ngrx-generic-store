@@ -18,7 +18,7 @@ export class FlightComponent implements OnInit, OnDestroy {
   constructor(private flightStoreService: FlightStoreService) { }
 
   ngOnInit() {
-    this.flightStoreService.dispatchLoadAction('http://localhost:2500/tasks');
+    this.flightStoreService.dispatchLoadAction('http://localhost:2500/flights');
     this.flights$ = this.flightStoreService.getFlights();
     this.loading$ = this.flightStoreService.getIsLoading();
     this.error$ = this.flightStoreService.getError();

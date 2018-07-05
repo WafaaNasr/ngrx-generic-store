@@ -6,9 +6,9 @@ import { AppComponent } from './app.component';
 // import { NgrxAppStoreModule } from "ngrx-app-store";
 import { UsersModule } from './users/users.module';
 import { Routes, RouterModule } from "@angular/router";
-import { Store, NgrxAppStoreModule } from 'ngrx-app-store';
+import { Store, NgrxAppStoreModule, createGenericReducer } from 'ngrx-app-store';
 import { FlightModule } from './flight/flight.module';
-
+import { UserEntity } from './users/users-store/models/user';
 
 export const routes: Routes = [
 
@@ -22,7 +22,6 @@ export const routes: Routes = [
     component: FlightComponent
   }
 ];
-
 
 @NgModule({
   declarations: [

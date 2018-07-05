@@ -4,7 +4,7 @@ import { InjectionToken } from '@angular/core';
 import { ActionReducerMap } from '@ngrx/store';
 import { AppState } from 'ngrx-app-store';
 
-//export const flightReducer = new ReducersManager<Flight>();
+export const flightReducer = new ReducersManager<Flight>();
 
 // export const reducerToken = new InjectionToken<ActionReducerMap<AppState>>('Registered Reducers');
 

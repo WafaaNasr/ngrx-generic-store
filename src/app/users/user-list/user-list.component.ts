@@ -23,15 +23,15 @@ export class UserListComponent implements OnInit {
   }
 
   onCreateUser() {
-    this.dispatcherService.dispatchCreateAction(new UserEntity("Tewst"), "http://localhost:2500/flights");
+    this.dispatcherService.dispatchCreateAction(new UserEntity("Tewst"), "http://localhost:2500/tasks");
   }
 
   onRemoveUser(id) {
-    this.dispatcherService.dispatchRemoveAction(id, "http://localhost:2500/flights/" + id);
+    this.dispatcherService.dispatchRemoveAction(id, "http://localhost:2500/tasks/" + id);
   } 
 
   onUpdateUser(event) {
     event.title = "Updated";
-    this.dispatcherService.dispatchUpdateAction(event, "http://localhost:2500/flights/" + event.id);
+    this.dispatcherService.dispatchUpdateAction(event, "http://localhost:2500/tasks/" + event.id);
   }
 }

@@ -12,6 +12,9 @@ import { UserListComponent } from "./user-list/user-list.component";
 import { NgrxAppStoreModule, StoreModule } from "ngrx-app-store";
 import { StoreDevtoolsModule } from "@ngrx/store-devtools";
 import { createGenericReducer } from "ngrx-app-store";
+import { UserEntity } from "./users-store/models/user";
+import * as userActions from "ngrx-app-store";
+import { userReducer } from "./users-store/users-store.reducers";
 
 export const routes: Routes = [
   {
@@ -22,11 +25,18 @@ export const routes: Routes = [
   
 ];
 
+export const factoryFn = () => {
+  const res = () => {
+    //createGenericReducer<UserEntity>()
+  };
+  //return createGenericReducer<UserEntity>(UserEntity).reducerFn;
+}
 @NgModule({
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
-    StoreModule.forFeature("users", createGenericReducer),
+    StoreModule.forFeature("users",createGenericReducer<UserEntity>(UserEntity).reducerFn),
+     //StoreModule.forFeature("users",userReducer.CreateReducer),
     StoreModule.forRoot({}),
     NgrxAppStoreModule,
   !environment.production ? StoreDevtoolsModule.instrument({ maxAge: 50 }) : []
