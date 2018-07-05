@@ -2,9 +2,6 @@ import { Injectable } from '@angular/core';
 
 import { StoreStateFactory } from './entity-adapter/store-state-factory';
 import { AppState } from './app.reducer';
-import { IBaseEntityState } from './entity-adapter/entitiy-adapter.index';
-import { EntitySelectors } from '@ngrx/entity/src/models';
-
 import { combineLatest, Observable } from 'rxjs';
 
 import { Store } from '@ngrx/store';
